@@ -1,8 +1,13 @@
+```
 // List all image URLs used on the current page
 const imageUrls = Array.from(document.images).map(img => img.src);
 console.log(imageUrls);
 
 
+```
+
+
+```
 [
     "https://deepstatemap.live/images/orientation_lock.svg",
     "https://deepstatemap.live/images/flags/gb.svg",
@@ -136,3 +141,4 @@ console.log(imageUrls);
     "https://deepstatemap.live/images/custom_nato/airport.png",
     "https://deepstatemap.live/images/custom_nato/airport.png"
 ]
+```
