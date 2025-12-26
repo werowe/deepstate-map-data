@@ -4,6 +4,9 @@ import requests
 from pymongo.errors import BulkWriteError, OperationFailure, PyMongoError
 from pymongo import MongoClient
 import hashlib
+from dotenv import load_dotenv
+import os
+
 
 url = "https://deepstatemap.live/api/history/last"
 
@@ -18,15 +21,16 @@ readable_time = dt.strftime('%Y-%m-%d %H:%M:%S')
 
 print("Downloaded at UTC", readable_time)
 
-#file = "/home/werowe/Documents/deepstate/data/" + str(data['id']) + ".json"
+file = "/home/werowe/Documents/deepstate/data/" + str(data['id']) + ".json"
 
-#with open(file, 'w', encoding='utf-8') as f:
-#    json.dump(data, f, indent=4, ensure_ascii=False)
+with open(file, 'w', encoding='utf-8') as f:
+    json.dump(data, f, indent=4, ensure_ascii=False)
     
+load_dotenv()
 
-user = "xxxx"
-
-pwd = "xxx"
+# 2. Access the variables
+user = os.getenv("MONGO_USER")
+pwd = os.getenv("MONGO_PWD")
 
 
 connection_string = f"mongodb+srv://{user}:{pwd}@cluster0.roydclf.mongodb.net/?appName=Cluster0"
@@ -82,7 +86,14 @@ except Exception as e:
     # Catch-all for non-database errors (like if 'docs' variable is malformed)
     print(f"Unexpected Python error: {e}", dt)
 
+now = datetime.datetime.now()
 
- 
+print("processing epoch {} human {}".format(epoch_time, dt_formatted))
+# Format as YY-MM-DD HH:MM:SS
+formatted_date = now.strftime("%y-%m-%d %H:%M:%S")
+
+print("run on ", now)
+
+
 
 print("================================================")
