@@ -29,11 +29,12 @@ with open(file, 'w', encoding='utf-8') as f:
 load_dotenv()
 
 # 2. Access the variables
-user = os.getenv("MONGO_USER")
-pwd = os.getenv("MONGO_PWD")
+user = os.getenv("MONGODB_USER")
+pwd = os.getenv("MONGODB_PWD")
+cluster = "cluster0.roydclf.mongodb.net/?appName=Cluster0"
 
 
-connection_string = f"mongodb+srv://{user}:{pwd}@cluster0.roydclf.mongodb.net/?appName=Cluster0"
+connection_string = f"mongodb+srv://{user}:{pwd}@{cluster}"
 
 client = MongoClient(connection_string)
 
@@ -54,10 +55,10 @@ docs = []
  
 
 for i in data['map']['features']:
+    i['epoch_time'] = epoch_time
     doc_string = json.dumps(i, sort_keys=True)
     doc_hash = hashlib.sha256(doc_string.encode('utf-8')).hexdigest()
-    i['epoch_time'] = epoch_time
-    i['doc_hash'] = doc_hash  # Store the clean hash
+    i['doc_hash'] = doc_hash  
 
     docs.append(i)
 
