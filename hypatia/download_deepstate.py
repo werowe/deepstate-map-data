@@ -21,20 +21,17 @@ readable_time = dt.strftime('%Y-%m-%d %H:%M:%S')
 
 print("Downloaded at UTC", readable_time)
 
-download = False
+file = "/home/werowe/Documents/deepstate/data/" + str(data['id']) + ".json"
 
-if download:
-    file = "/home/werowe/Documents/deepstate/data/" + str(data['id']) + ".json"
-
-    with open(file, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+with open(file, 'w', encoding='utf-8') as f:
+    json.dump(data, f, indent=4, ensure_ascii=False)
     
 load_dotenv()
 
 # 2. Access the variables
 user = os.getenv("MONGODB_USER")
 pwd = os.getenv("MONGODB_PWD")
-cluster = os.getenv("CLUSTER")
+cluster = "cluster0.roydclf.mongodb.net/?appName=Cluster0"
 
 
 connection_string = f"mongodb+srv://{user}:{pwd}@{cluster}"
