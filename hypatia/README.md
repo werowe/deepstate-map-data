@@ -7,3 +7,4 @@ Some colab notebooks don't render because of widgets that don't render on github
 * [Time Series:  Changed in Occupied and Liberated Territories](https://github.com/werowe/deepstate-map-data/blob/main/hypatia/deepstate-time-series.ipynb)
 * [How to use Putty. Terminiu, Amazon EC2 server, MongoDB, and MongoDB Compass](https://docs.google.com/document/d/1YI5QeUz6GoHwCXjHn2PEBaJlTJk9dH3m8OmE90s7Rm0/edit?usp=sharing)
 * [Draw Polygon on OpenStreet Map](draw-openstreet-map.ipynb)
+* [WORKING:  BattleField Gains](https://colab.research.google.com/drive/1r-bskGQ_T0y299DBkx3XZbSY2E7-_Lfe#scrollTo=lhkFlnK0azQA)
