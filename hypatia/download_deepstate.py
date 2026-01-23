@@ -31,7 +31,7 @@ load_dotenv()
 # 2. Access the variables
 user = os.getenv("MONGODB_USER")
 pwd = os.getenv("MONGODB_PWD")
-cluster = "cluster0.roydclf.mongodb.net/?appName=Cluster0"
+cluster = os.getenv("CLUSTER")
 
 
 connection_string = f"mongodb+srv://{user}:{pwd}@{cluster}"
