@@ -21,10 +21,10 @@ readable_time = dt.strftime('%Y-%m-%d %H:%M:%S')
 
 print("Downloaded at UTC", readable_time)
 
-file = "/home/werowe/Documents/deepstate/data/" + str(data['id']) + ".json"
+#file = "/home/werowe/Documents/deepstate/data/" + str(data['id']) + ".json"
 
-with open(file, 'w', encoding='utf-8') as f:
-    json.dump(data, f, indent=4, ensure_ascii=False)
+#with open(file, 'w', encoding='utf-8') as f:
+#    json.dump(data, f, indent=4, ensure_ascii=False)
     
 load_dotenv()
 
